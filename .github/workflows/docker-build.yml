@@ -8,6 +8,9 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       -
         name: Set up QEMU
@@ -26,7 +29,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          file: ./Dockerfile
           context: .
           push: true
           tags: ghcr.io/${{ github.repository }}:v0.1
