@@ -29,7 +29,8 @@ jobs:
         name: check
         run: |
           pwd
-          ls -la      
+          ls -la  
+          ls -la ..    
       -
         name: Build and push
         uses: docker/build-push-action@v4
