@@ -38,3 +38,6 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ github.repository }}:v0.1
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
